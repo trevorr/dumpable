@@ -1,0 +1,61 @@
+{
+  "name": "dumpable",
+  "description": "Make Object.toString useful",
+  "version": "1.0.0",
+  "author": "Trevor Robinson",
+  "bugs": "https://github.com/trevorr/dumpable/issues",
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.24",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "mocha": "^6.2.2",
+    "nyc": "^15.0.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/trevorr/dumpable",
+  "keywords": [
+    "dump",
+    "object",
+    "tostring",
+    "typescript"
+  ],
+  "license": "ISC",
+  "main": "dist/index.js",
+  "nyc": {
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "semi": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevorr/dumpable.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc --project src",
+    "lint": "eslint 'src/**/*.ts'",
+    "posttest": "npm run lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test",
+    "prettier": "prettier --write 'src/**/*'",
+    "test": "nyc --check-coverage --extension .ts -r text -r html mocha --forbid-only 'test/**/*.test.ts'"
+  },
+  "types": "dist/index.d.ts"
+}
