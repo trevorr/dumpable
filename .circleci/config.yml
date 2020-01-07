@@ -16,7 +16,7 @@ jobs:
       - run:
           command: npm test
       - run:
-          command: npm lint:ci
+          command: npm run lint:ci
       - store_test_results:
           path: test-results
       - store_artifacts:
