@@ -1,5 +1,8 @@
 # dumpable: Make Object.toString useful
 
+[![npm](https://img.shields.io/npm/v/dumpable)](https://www.npmjs.com/package/dumpable)
+[![CircleCI](https://img.shields.io/circleci/build/github/trevorr/dumpable)](https://circleci.com/gh/trevorr/dumpable)
+
 Because attaching a debugger isn't always an option, this library provides tools to easily implement
 a useful, consistent, and extensible override of `Object.toString` for your classes. After all,
 you're not using a dynamic language to see something as useless as `[object Object]` in your logs.
